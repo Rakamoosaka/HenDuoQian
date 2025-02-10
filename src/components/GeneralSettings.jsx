@@ -1,5 +1,5 @@
 import "../styles/components.scss";
-import ToggleSwitch from "./smaller components/ToggleSwitch";
+import ToggleSwitch from "./ui/ToggleSwitch";
 import useStore from "../store/useStore";
 
 const GeneralSettings = () => {

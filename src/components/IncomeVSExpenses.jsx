@@ -1,5 +1,5 @@
 import "../styles/components.scss";
-import IncomeExpensesChart from "./smaller components/IncomeExpensesChart";
+import IncomeExpensesChart from "./ui/IncomeExpensesChart";
 
 const IncomeVSExpenses = () => {
   return (

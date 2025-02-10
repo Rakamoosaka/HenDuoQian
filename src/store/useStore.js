@@ -19,7 +19,6 @@ const useStore = create(
         { id: 4, name: "Transport", budget: 300, spent: 0 },
         { id: 5, name: "Entertainment", budget: 200, spent: 0 },
         { id: 6, name: "Health", budget: 250, spent: 0 },
-        { id: 7, name: "Income", budget: 5000, spent: 0 },
       ],
 
       budget: {

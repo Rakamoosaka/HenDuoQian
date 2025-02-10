@@ -1,5 +1,5 @@
 import "../styles/components.scss";
-import ProgressBar from "./smaller components/ProgressBar";
+import ProgressBar from "./ui/ProgressBar";
 
 const MonthlyBudget = () => {
   return (

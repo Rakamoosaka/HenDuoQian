@@ -1,5 +1,5 @@
 import "../styles/components.scss";
-import CustomPieChart from "./smaller components/PieChart";
+import CustomPieChart from "./ui/PieChart";
 import useStore from "../store/useStore";
 import { useEffect } from "react";
 
