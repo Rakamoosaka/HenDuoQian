@@ -11,7 +11,10 @@ const ManageCategories = () => {
     (category) =>
       category.name.toLowerCase() === categoryName.trim().toLowerCase()
   );
-  const isValid = categoryName.trim().length > 0 && !isDuplicate;
+  const isValid =
+    categoryName.trim().length > 0 &&
+    !isDuplicate &&
+    categoryName.trim.length < 30;
 
   return (
     <>
