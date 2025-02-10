@@ -5,6 +5,7 @@
   --p-subtext-color: rgba(20, 20, 20, 0.7);
   --p-color: rgba(20, 20, 20, 1);
   --black-text: #000000;
+  --select-color: #fafafa;
 }
 
 .dark {
@@ -14,6 +15,7 @@
   --p-subtext-color: rgba(255, 255, 255, 0.7);
   --p-color: #fafafa;
   --black-text: #f2f2f2;
+  --select-color: #111111;
 }
 
 .content-card {
@@ -326,9 +328,11 @@ select {
 }
 
 .select option {
-  background-color: #18181b;
+  background-color: var(--select-color);
 }
-
+.disabled-button {
+  background-color: var(--disabled-button);
+}
 .background-none {
   background: none;
   border: none;

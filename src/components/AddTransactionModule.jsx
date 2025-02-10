@@ -7,6 +7,15 @@ const AddTransactionModule = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [transactionType, setTransacitonType] = useState("");
+
+  const isValid =
+    amount > 0 &&
+    amount < 9999999999 &&
+    description.length > 0 &&
+    description.length < 30 &&
+    category &&
+    transactionType;
+
   return (
     <>
       <div className="content-card">
@@ -16,7 +25,10 @@ const AddTransactionModule = () => {
             type="text"
             value={description}
             placeholder="Description"
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              setDescription(value.trim());
+            }}
             onFocus={(event) => event.target.select()}
           />
           <input
@@ -58,15 +70,20 @@ const AddTransactionModule = () => {
             <option value="expense">Expense</option>
           </select>
           <button
-            className="button-default"
-            onClick={() =>
+            disabled={!isValid}
+            className={`button-default ${isValid ? "" : "disabled-button"}`}
+            onClick={() => {
               addTransaction({
                 amount: amount,
                 description: description,
                 category: category,
                 type: transactionType,
-              })
-            }
+              });
+              setAmount(0);
+              setCategory("");
+              setDescription("");
+              setTransacitonType("");
+            }}
           >
             Add Transcation
           </button>

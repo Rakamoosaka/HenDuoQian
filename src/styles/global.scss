@@ -11,6 +11,8 @@
   --btn-text-color: #fafafa;
   --hover-bg: rgba(0, 0, 0, 0.05);
   --logo-text-color: #111111;
+  --icon-hover-bg-color: #f1f1f1;
+  --disabled-button: #18181bc7;
 }
 
 .dark {
@@ -26,6 +28,8 @@
   --btn-text-color: #18181b;
   --hover-bg: rgba(255, 255, 255, 0.1);
   --logo-text-color: #fafafa;
+  --icon-hover-bg-color: #252525;
+  --disabled-button: #fafafac2;
 }
 
 * {
@@ -78,6 +82,9 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.icon-button:hover {
+  background-color: var(--icon-hover-bg-color);
 }
 
 .mode-toggle {

@@ -6,6 +6,7 @@ const TransactionList = () => {
   const [transactionType, setTransactionType] = useState("all");
   const currencySymbols = { USD: "$", EUR: "€", KZT: "₸", RUB: "₽" };
   const currencySign = currencySymbols[settings.currency];
+  const reverseTransactions = transactions.slice().reverse();
 
   return (
     <div className="content-card transaction-list">
@@ -31,7 +32,7 @@ const TransactionList = () => {
           </tr>
         </thead>
         <tbody className="transaction-tbody">
-          {transactions
+          {reverseTransactions
             .filter(
               (transaction) =>
                 transaction.type === transactionType ||

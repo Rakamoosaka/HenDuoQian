@@ -89,8 +89,8 @@ const CustomPieChart = ({ labels, dataset }) => {
             if (value === null) return "";
             const dataArr = context.dataset.data;
             const total = dataArr.reduce((acc, val) => acc + (val || 0), 0);
-            const percentage = ((value / total) * 100).toFixed(1) + "%";
-            return percentage;
+            const percentage = ((value / total) * 100).toFixed(1);
+            return percentage >= 3 ? `${percentage}%` : "";
           },
         },
       },

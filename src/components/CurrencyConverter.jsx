@@ -43,9 +43,10 @@ const CurrencyConverter = () => {
             type="number"
             value={amount}
             onChange={(e) =>
-              e.target.value ? setAmount(e.target.value) : setAmount(0)
+              e.target.value ? setAmount(e.target.value) : setAmount()
             }
             onFocus={(event) => event.target.select()}
+            onBlur={() => setAmount(0)}
           />
           <select
             className="select"

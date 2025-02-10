@@ -6,6 +6,13 @@ import "../styles/global.scss";
 const ManageCategories = () => {
   const { categories, addCategory, deleteCategory } = useStore();
   const [categoryName, setCategoryName] = useState("");
+
+  const isDuplicate = categories.some(
+    (category) =>
+      category.name.toLowerCase() === categoryName.trim().toLowerCase()
+  );
+  const isValid = categoryName.trim().length > 0 && !isDuplicate;
+
   return (
     <>
       <div className="content-card">
@@ -19,8 +26,14 @@ const ManageCategories = () => {
             onFocus={(event) => event.target.select()}
           />
           <button
-            className="button-default"
-            onClick={() => addCategory(categoryName)}
+            className={`button-default ${isValid ? "" : "disabled-button"}`}
+            onClick={() => {
+              if (isValid) {
+                addCategory(categoryName.trim());
+                setCategoryName("");
+              }
+            }}
+            disabled={!isValid}
           >
             Add
           </button>
