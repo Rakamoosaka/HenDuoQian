@@ -1,0 +1,376 @@
+:root {
+  --expense-color: rgb(239, 68, 68);
+  --income-color: rgb(34, 197, 94);
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --p-subtext-color: rgba(20, 20, 20, 0.7);
+  --p-color: rgba(20, 20, 20, 1);
+  --black-text: #000000;
+}
+
+.dark {
+  --expense-color: #f87171;
+  --income-color: #4ade80;
+  --box-shadow-color: rgba(255, 255, 255, 0.2);
+  --p-subtext-color: rgba(255, 255, 255, 0.7);
+  --p-color: #fafafa;
+  --black-text: #f2f2f2;
+}
+
+.content-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 1px 1px 2px var(--box-shadow-color);
+}
+
+.content-card > *:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.content-card h1 {
+  font-size: 24px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  gap: 24px;
+}
+
+.expense-income-span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.income-lil-box span {
+  color: var(--income-color);
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.expense-lil-box span {
+  color: var(--expense-color);
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.income-lil-box p,
+.expense-lil-box p {
+  color: var(--p-subtext-color);
+}
+
+.income-lil-box,
+.expense-lil-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.net-balance {
+  color: var(--p-subtext-color);
+}
+
+.net-balance-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--black-text);
+}
+
+.hr {
+  opacity: 0.4;
+}
+
+.spent-remaining {
+  color: var(--p-color);
+  font-weight: 700;
+}
+
+.push-right {
+  display: flex;
+  justify-content: end;
+}
+
+.expense-breakdown {
+  grid-column: 1/3;
+}
+
+.first-block {
+  grid-column: 1/2;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.input-group input {
+  flex-grow: 1;
+}
+
+.input-group input,
+select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.transaction-history {
+  grid-column: 1/4;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-table-headers th {
+  color: var(--p-subtext-color);
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.exchange-rates-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-tbody td {
+  padding: 10px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.transaction-tbody tr:last-child {
+  border: none;
+}
+
+#transactions {
+  width: 100%;
+}
+
+.transaction-list {
+  grid-column: 1/3;
+}
+
+.add-transaction-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-transaction-inputs input,
+select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 12px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.button-default {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+}
+
+.button-full {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.piechart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.graphchart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.overall-expenditure {
+  color: var(--p-subtext-color);
+  font-size: 16px;
+}
+
+.budget-count {
+  font-size: 16px;
+  color: var(--black-text);
+}
+
+.categories-breakdown {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.currency-rate {
+  display: flex;
+  justify-content: space-between;
+  color: var(--p-subtext-color);
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.currency-rate-value {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.income-vs-expenses {
+  grid-column: 1/4;
+}
+
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: var(--width);
+  height: var(--height);
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e4e4e4;
+  transition: 0.4s;
+  border-radius: calc(var(--height) / 2);
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: var(--circle-size);
+  width: var(--circle-size);
+  left: calc((var(--height) - var(--circle-size)) / 2);
+  bottom: calc((var(--height) - var(--circle-size)) / 2);
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #1b1b1b;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(calc(var(--width) - var(--height)));
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.general-settings {
+  gap: 12px;
+}
+
+.categories-list li {
+  background-color: #f4f4f5;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 12px;
+  color: #111111;
+}
+
+.select option {
+  background-color: #18181b;
+}
+
+.background-none {
+  background: none;
+  border: none;
+}
+
+.progress-bar-bg {
+  background-color: #f2f2f2;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.large-progressbar {
+  height: 20px;
+}
+
+.small-progressbar {
+  height: 16px;
+}
+
+.progress-bar-fill {
+  background-color: #1b1b1b;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  animation: fillAnimation 1s ease-in-out forwards;
+  width: var(--progress);
+}
+
+.dark .progress-bar-bg {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .progress-bar-fill {
+  background-color: var(--progress-bar-fill-color, #fafafa);
+}
+
+@keyframes fillAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress);
+  }
+}
