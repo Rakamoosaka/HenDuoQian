@@ -53,7 +53,7 @@ HenDuoQian/
 ### 1️⃣ Clone the repository
 
 ```sh
-git clone https://github.com/yourusername/henduoqian.git
+git clone https://github.com/Rakamoosaka/HenDuoQian.git
 cd henduoqian
 ```
 
